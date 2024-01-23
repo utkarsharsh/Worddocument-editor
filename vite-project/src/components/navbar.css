@@ -1,0 +1,70 @@
+.navbarwraper{
+    width: 100%;
+    display: flex;
+    background-color:#1c1c1c;
+    height: 60px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    justify-content: space-around;
+    /* box-shadow: 10px 10px rgb(139, 133, 133); */
+    box-shadow: 0px 0px 10px 10px grey;
+    position: relative;
+
+}
+.navothers{
+    display: flex;
+    width: 60%;
+    gap: 5rem;
+    
+}
+.profile {
+position: absolute;
+right:26px;
+height: 100%;
+top: 20%;
+}
+.profile button{
+    width: 35px;
+    height: 35px;
+    color: white;
+    background-color: red;
+    border-style:none ;
+    outline: none;
+    border-radius: 50%;
+}
+.navhome button{
+    width: 80px;
+    height: 35px;
+    color: white;
+    background-color: blue;
+    border-style:none ;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.navupload button{
+    width: 80px;
+    height: 35px;
+    color: white;
+    background-color: blue;
+    border-style:none ;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.navsearch input{
+    width: 400px;
+    height: 35px;
+    padding: 10px;
+    border-style:none ;
+    outline: none;
+    border-radius: 6px;
+    
+    
+}
+.navlogo p{
+    font-size: 30px;
+
+    
+}

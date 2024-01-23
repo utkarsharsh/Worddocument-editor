@@ -1,0 +1,73 @@
+.uploadwraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    
+}
+.uploadwraperin{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 70%;
+    position: relative;
+    background-color: rgb(232, 225, 225);
+    height: 50vh;
+    margin-top: 55px;
+    flex-direction: column;
+    color: black;  
+}
+.uploadwraperin input{
+    outline: none;
+     border-style:none ;
+     border-radius: 5px;
+     padding: 4px;
+     width: 70%;
+     margin-left: 5px;
+     height: 90%;
+}
+.filename{
+    display: flex;
+    width: 65%;
+    height: 40px;
+    align-items: center;
+    margin-top: 15px;
+margin-bottom: 12px;
+}
+.uploadwraperin p{
+    font-style: bold;
+    font-weight:550;
+    width: 120px;
+}
+.discription{
+    display: flex;
+    width: 65%;
+    height: 40px;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+}
+.chosefile{
+    display: flex;
+    width: 65%;
+    height: 40px;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+}
+.filesubmit{
+    margin-top: 8px;
+
+}
+.filesubmit button{
+    outline: none;
+    border-style: none;
+    width: 200px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border-radius: 3px;
+}
