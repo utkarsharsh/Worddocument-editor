@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<Login/>}></Route>
       <Route path='/home' element={<Homepage/>}></Route>
       <Route path='/upload' element={<Upload/>}></Route>
-      
+      <Route path='/doc/:id' element={<Suneditor/>}/>
       </Routes></BrowserRouter>
    
     </>

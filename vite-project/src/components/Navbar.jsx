@@ -1,5 +1,6 @@
 import React from 'react'
 import './navbar.css'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className='navbarwraper'>
@@ -11,11 +12,11 @@ const Navbar = () => {
             <input type="search" placeholder="search your document"/>
         </div>
         <div className="navhome">
-       <button>Home</button>
+    <Link to={"/home"}>  <button>Home</button> </Link> 
         </div>
         <div>
             <div className="navupload"> 
-          <button>Upload</button>
+        <Link to={"/upload"}> <button>Upload</button></Link> 
         </div>
         <div className="profile">
         <button>H</button>

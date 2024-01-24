@@ -1,0 +1,17 @@
+.suneditorwrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sunbtn button{
+    margin-top: 12px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: blue;
+    outline: none;
+    border-style: none;
+    cursor: pointer;
+}
