@@ -3,9 +3,10 @@ import './homepage.css'
 import Navbar from './navbar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-const Homepage = () => {
+import {useNavigate} from 'react-router-dom'
+const Homepage = ({socket}) => {
   const [documents,setdocuments]=useState([]);
-
+	const navigate = useNavigate();
   async function handleapicall(){
     let url=import.meta.env.VITE_URL;
     const {data}=await axios.get(url+"getdocument");
@@ -16,6 +17,25 @@ const Homepage = () => {
 useEffect(()=>{
   handleapicall();
 },[])
+
+
+useEffect(()=>{
+  let x=localStorage.getItem("token1212");
+  if(x){
+   
+  }
+  else{
+    navigate("/");
+  }
+ 
+ },[])
+
+
+
+
+
+
+
 
 
   return (

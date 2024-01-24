@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import Navbar from './navbar';
 import axios from 'axios'
 import './suneditor.css'
+import {useNavigate} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
-const Suneditor = () => {
+const Suneditor = ({socket}) => {
     const [value,setvalue]=useState("");
     const [currentfile,setcurrentfile]=useState(null);
         let {id}=useParams();
+        useEffect(()=>{
+          let x=localStorage.getItem("token1212");
+          if(x){
+           
+          }
+          else{
+            navigate("/");
+          }
+         
+         },[])
+         const navigate = useNavigate();
 
   async  function handlevalue(){
      
@@ -18,7 +30,7 @@ const Suneditor = () => {
     setvalue(data.doc);
     setcurrentfile(data.filename);
     console.log(data);
-
+    socket.emit("Newroom",{room:id});
     }
   async  function handleupdate(){
     let url = import.meta.env.VITE_URL;
@@ -27,9 +39,21 @@ const Suneditor = () => {
 
     }
     
-    useState(()=>{
+    useEffect(()=>{
       handlevalue();
     },[])
+    function handlesocketchange({doc}){
+      console.log(doc);
+   setvalue(doc);
+    }
+    useEffect(()=>{
+      socket.on("applychange",handlesocketchange)
+     return (()=>{
+      socket.off("applychange",handlesocketchange)
+     })
+    },[socket])
+
+    
 
   return (<>
   <Navbar/>
@@ -41,7 +65,7 @@ const Suneditor = () => {
   }
   <div className="suneditorwrap">
     <SunEditor setContents={value}    onChange={(e)=>{
-setvalue(e);
+socket.emit("changes",{doc:e,room:id});
 console.log(e);
     }    } width='100%' height='300px'/>
 <div className="sunbtn">

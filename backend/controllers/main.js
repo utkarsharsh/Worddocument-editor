@@ -27,12 +27,13 @@ export const SignUp=async (req,res,next)=>{
 
 export const login=async (req,res,next)=>{
 
-    if((await user.find({username:req.body.name})).length==0){
+    if((await user.find({username:req.body.username})).length==0){
        res.send("No user found");
     }
     else {
-        let password= await user.findOne({username:req.body.name});
+        let password= await user.findOne({username:req.body.username});
         if(password.password==req.body.password){
+            let username=req.body.username;
             const token=jwt.sign({username},process.env.SECRETKEY);
             res.send({status:"Yes",token});
 

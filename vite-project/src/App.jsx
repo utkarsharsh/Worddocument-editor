@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,17 +8,29 @@ import Suneditor from './components/suneditor'
 import Homepage from './components/Homepage'
 import Navbar from './components/navbar'
 import Upload from './components/Upload'
+import { io } from "socket.io-client";
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const socket= io("http://localhost:5000");
+  useEffect(
+    ()=>{
+      socket.on("connection", () => {
+        console.log(socket.id);
+        
+      });
+      
+
+    },[socket]
+  )
 
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Login/>}></Route>
-      <Route path='/home' element={<Homepage/>}></Route>
-      <Route path='/upload' element={<Upload/>}></Route>
-      <Route path='/doc/:id' element={<Suneditor/>}/>
+      <Route path='/' element={<Login />}></Route>
+      <Route path='/home' element={<Homepage socket={socket}/>}></Route>
+      <Route path='/upload' element={<Upload socket={socket}/>}></Route>
+      <Route path='/doc/:id' element={<Suneditor socket={socket}/>}/>
       </Routes></BrowserRouter>
    
     </>

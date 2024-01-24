@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 import './Login.css'
 
 
@@ -7,8 +8,10 @@ const Login = () => {
 	const [sign,setsign]=useState("SignIn"); 
 	const[username,setusername]=useState("");
 	const[password,setpassword]=useState("");
+	const navigate = useNavigate();
  async	function handlesignIn(e){
 		e.preventDefault();
+		
 		if(username=="" || password==""){
 			alert("Enter valid information");
 			return;
@@ -19,6 +22,16 @@ const Login = () => {
 			username,password
 		});
 		console.log(response);
+		if(response.data=="No user found"){
+			alert(response.data);
+		}
+		else if(response.data=="Password did not match"){
+			alert(response.data);
+		}
+		else {
+			localStorage.setItem("token1212",response.data.token);
+		    navigate("/home");
+		}
 	}
 	async function handlesignup(e){
   e.preventDefault();
@@ -28,14 +41,29 @@ const Login = () => {
 }
 let url=import.meta.env.VITE_URL;
 console.log(url);
-let response=await axios.post(url+"login",{
+
+let response=await axios.post(url+"signup",{
 	username,password
 });
 console.log(response);
-	}
+
+if(response.data=="User already exits"){
+	alert(response.data);
+}
+else{
+	localStorage.setItem("token1212",response.data.token);
+	navigate("/home");
+}
+}
 
 
+useEffect(()=>{
+ let x=localStorage.getItem("token1212");
+ if(x){
+	navigate("/home")
+ }
 
+},[])
 
 	
 	

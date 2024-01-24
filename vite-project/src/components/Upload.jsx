@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import Navbar from './navbar'
 import axios from 'axios'
 import './upload.css'
+import {useNavigate} from 'react-router-dom'
 const Upload = () => {
      const [filename,setfilename]=useState(null);
      const [discription,setdiscription]=useState(null);
      const [doc,setdoc]=useState(null);
+     const navigate = useNavigate();
    async  function handleupload(){
     if(filename==null || discription==null || doc==null){
         alert("Fill all information");
@@ -25,6 +27,17 @@ const Upload = () => {
 );
 console.log(data);
      }
+
+     useEffect(()=>{
+      let x=localStorage.getItem("token1212");
+      if(x){
+       
+      }
+      else{
+        navigate("/");
+      }
+     
+     },[]);
   return (
     <div>
       <Navbar/>
