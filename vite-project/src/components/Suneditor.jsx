@@ -6,6 +6,7 @@ import axios from 'axios'
 import './suneditor.css'
 import {useNavigate} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
+import { io } from "socket.io-client";
 const Suneditor = ({socket,t}) => {
     const [value,setvalue]=useState("");
     const [currentfile,setcurrentfile]=useState(null);
@@ -21,6 +22,25 @@ const Suneditor = ({socket,t}) => {
          
          },[])
          const navigate = useNavigate();
+
+//socket connection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   async  function handlevalue(){
      
@@ -66,7 +86,7 @@ const Suneditor = ({socket,t}) => {
   <div className="suneditorwrap">
     <SunEditor setContents={value}    onChange={(e)=>{
 socket.emit("changes",{doc:e,room:id});
-console.log(e);
+
     }    } width='100%' height='300px'/>
 <div className="sunbtn">
   <button onClick={handleupdate}>
