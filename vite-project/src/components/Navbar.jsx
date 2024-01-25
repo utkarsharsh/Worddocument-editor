@@ -1,7 +1,7 @@
 import React from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
-const Navbar = () => {
+const Navbar = ({t}) => {
   return (
     <div className='navbarwraper'>
         <div className="navlogo">
@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to={"/upload"}> <button>Upload</button></Link> 
         </div>
         <div className="profile">
-        <button>H</button>
+        <button>{t}</button>
         </div>
         </div>
     </div>

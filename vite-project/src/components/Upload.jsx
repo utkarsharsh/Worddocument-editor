@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
 import Navbar from './navbar'
 import axios from 'axios'
 import './upload.css'
 import {useNavigate} from 'react-router-dom'
-const Upload = () => {
+const Upload = ({t}) => {
      const [filename,setfilename]=useState(null);
      const [discription,setdiscription]=useState(null);
      const [doc,setdoc]=useState(null);
@@ -40,7 +40,7 @@ console.log(data);
      },[]);
   return (
     <div>
-      <Navbar/>
+      <Navbar t={t}/>
       <div className="uploadwraper">
         <div className="uploadwraperin">
            <div className="filename">

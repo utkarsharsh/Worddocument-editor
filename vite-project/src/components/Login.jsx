@@ -4,18 +4,21 @@ import {useNavigate} from 'react-router-dom'
 import './Login.css'
 
 
-const Login = () => {
+const Login = ({sett}) => {
 	const [sign,setsign]=useState("SignIn"); 
 	const[username,setusername]=useState("");
 	const[password,setpassword]=useState("");
 	const navigate = useNavigate();
  async	function handlesignIn(e){
+
 		e.preventDefault();
 		
 		if(username=="" || password==""){
 			alert("Enter valid information");
 			return;
 		}
+		sett(username[0]);
+		console.log(username[0]);
 		let url=import.meta.env.VITE_URL;
 		console.log(url);
 		let response=await axios.post(url+"login",{
@@ -39,6 +42,8 @@ const Login = () => {
 	alert("Enter valid information");
 	return;
 }
+sett(username[0]);
+		
 let url=import.meta.env.VITE_URL;
 console.log(url);
 

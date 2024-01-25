@@ -68,3 +68,74 @@ top: 20%;
 
     
 }
+
+@media only screen and (max-width: 1160px) {
+
+    .navothers{
+        gap:3rem
+    }
+
+}
+@media only screen and (max-width: 1093px) {
+
+    .navothers{
+        gap:1rem
+    }
+
+}
+@media only screen and (max-width: 1093px) {
+
+    .navsearch input{
+        display: none;
+    }
+    .navothers{
+        gap:6rem
+    }
+
+
+}
+@media only screen and (max-width: 673px) {
+
+    .navothers{
+        gap:3rem
+    }
+
+}
+@media only screen and (max-width: 529px) {
+    .navothers{
+        gap:1rem
+    }
+   
+}
+@media only screen and (max-width: 429px) {
+    .navupload button{
+  width: 50px;
+
+    }
+      
+    .navhome button{
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    .profile {
+        position: absolute;
+        right:6px;
+        height: 100%;
+        top: 20%;
+        }
+        .navlogo p{
+            font-size: 16px;
+        
+            
+        }
+        .navothers{
+            display: flex;
+            width: 80%;
+           
+            
+        }
+
+
+}

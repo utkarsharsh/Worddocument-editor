@@ -70,4 +70,22 @@ margin-bottom: 12px;
     background-color: blue;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 559px) {
+    .uploadwraperin{
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .chosefile{
+        width: 90%;
+    }
+    .discription{
+        width: 90%;
+    }
+        .filename{
+            width: 90%;
+        }
 }

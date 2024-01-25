@@ -4,7 +4,8 @@ import Navbar from './navbar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
-const Homepage = ({socket}) => {
+const Homepage = ({socket,t}) => {
+  console.log(t);
   const [documents,setdocuments]=useState([]);
 	const navigate = useNavigate();
   async function handleapicall(){
@@ -40,7 +41,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <Navbar/>
+      <Navbar t={t}/>
     <div className="homewraper">
       <div className="cardwraper">
         <div >

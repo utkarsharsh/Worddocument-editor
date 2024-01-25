@@ -6,7 +6,7 @@ import axios from 'axios'
 import './suneditor.css'
 import {useNavigate} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
-const Suneditor = ({socket}) => {
+const Suneditor = ({socket,t}) => {
     const [value,setvalue]=useState("");
     const [currentfile,setcurrentfile]=useState(null);
         let {id}=useParams();
@@ -56,7 +56,7 @@ const Suneditor = ({socket}) => {
     
 
   return (<>
-  <Navbar/>
+  <Navbar t={t}/>
   {
     <br />
   }
