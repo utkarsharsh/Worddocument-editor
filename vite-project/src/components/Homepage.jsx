@@ -44,11 +44,11 @@ useEffect(()=>{
       <Navbar t={t}/>
     <div className="homewraper">
       <div className="cardwraper">
-        <div >
+      
           {
             documents.map((e,index)=>{
 return(
-<div key={index}>
+<div key={index}  style={{margin:"12px"}}>
   <div className="homecard">
     <img src='https://static.vecteezy.com/system/resources/previews/000/420/451/original/vector-documents-icon.jpg'/>
     <p className='cardfilename'>
@@ -79,7 +79,7 @@ return(
             
      
 
-        </div>
+       
 
       </div>
       
